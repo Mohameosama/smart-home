@@ -1,5 +1,5 @@
 *.pdsbak
 *.workspace
 *.dev
-*.hex
+
 *.lst
