@@ -128,7 +128,6 @@ STRING:
 	CLR A
 	MOVC A, @A+DPTR ; move char from data in A register we khalas
 	ACALL DATAWRT
-	ACALL DELAY
 	INC DPTR
 	JZ FINISHED
 	SJMP STRING
