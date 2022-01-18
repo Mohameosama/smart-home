@@ -21,8 +21,9 @@ MOV A, #0CH	; DISPLAY & CURSOR ON ; 00 0000 1100
 ACALL COMMANDWRT
 ACALL DELAY
 		
-ACALL CLRLCD    ; clear lcd to prepare for other strings
-	
+ACALL CLRLCD    ; CLEAR LCD AND WELCOME
+MOV DPTR, #WLC
+ACALL STRING
 	
 ; initializing and reading keypad continuously
 BACK:
@@ -206,7 +207,8 @@ DATAWRT:
 	RET
 
 ORG 300H
-ZERO:    DB	"ZERO", 0
+WLC:     DB "WELCOME", 0
+ZERO:    DB	"ALL OFF", 0
 LED:	 DB	"LED" ,0 
 FAN:	 DB	"FAN" ,0
 BUZZER:  DB     "BUZZER", 0
